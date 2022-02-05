@@ -1,4 +1,4 @@
-var wordapi = "https://github.com/natrivera/wordle_game/blob/main/words.csv";
+var wordapi = "https://github.com/natrivera/wordle_game/blob/main/words.json";
 var worder = "java";
 var wrong = [];
 var array = [];
@@ -13,7 +13,13 @@ function getWord() {
    var today = new Date();
 
    // get the word of the day
-   words = $.csv.toObjects(wordapi);
+   $.getJSON(wordapi, function(word) {
+     words = word;
+     //var num = word.words.length;
+     //var random = Math.floor(Math.random() * num);
+     //worder = word.words[random].toUpperCase();
+     //console.log(worder);
+   }); //end of getJSON
    console.log(words);
 
 }
