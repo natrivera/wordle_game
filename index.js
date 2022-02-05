@@ -13,7 +13,7 @@ function getWord() {
    var today = new Date();
 
    // get the word of the day
-   words = $.csv.toArrays(wordapi);
+   words = $.csv.toObjects(wordapi);
    console.log(words);
 
 }
