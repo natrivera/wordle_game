@@ -11,15 +11,6 @@ var words;
 function getWord() {
    // get today's date
    var today = new Date();
-
-   // get the word of the day
-   $.getJSON(wordapi, function(word) {
-     words = word;
-     //var num = word.words.length;
-     //var random = Math.floor(Math.random() * num);
-     //worder = word.words[random].toUpperCase();
-     //console.log(worder);
-   }); //end of getJSON
    console.log(words);
 
 }

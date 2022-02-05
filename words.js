@@ -1,4 +1,4 @@
-words = [
+var words = [
   {
     "date": "1/1/22",
     "word": "about"
