@@ -1,9 +1,10 @@
-var wordapi = "http://natrivera.com/hangman/words.json";
+var wordapi = "https://github.com/natrivera/wordle_game/blob/main/words.csv";
 var worder = "java";
 var wrong = [];
 var array = [];
 var arr2 = [];
 var count = 0;
+var words;
 
 
 
@@ -12,14 +13,8 @@ function getWord() {
    var today = new Date();
 
    // get the word of the day
-   $.getJSON('words.csv', function(word) {
-
-     var items = arr.filter(item => item.arrayWithvalue.indexOf('4') !== -1);
-     //var num = word.words.length;
-     //var random = Math.floor(Math.random() * num);
-     //worder = word.words[random].toUpperCase();
-     console.log(word);
-   }); //end of getJSON
+   words = $.csv.toArrays(wordapi);
+   console.log(words);
 
 }
 
