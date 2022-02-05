@@ -11,6 +11,7 @@ var words;
 function getWord() {
    // get today's date
    var today = new Date();
+   words = json.parse("https://github.com/natrivera/wordle_game/blob/main/words.js")
    console.log(words);
 
 }
