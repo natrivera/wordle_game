@@ -11,8 +11,15 @@ var words;
 function getWord() {
    // get today's date
    var today = new Date();
-   words = JSON.parse("https://github.com/natrivera/wordle_game/blob/main/words.js");
-   console.log(words);
+   $.getJSON(wordapi, function(word) {
+     //var num = word.words.length;
+     //var random = Math.floor(Math.random() * num);
+     //worder = word.words[random].toUpperCase();
+     words = word;
+     console.log(words);
+   }); //end of getJSON
+
+   //console.log(words);
 
 }
 
