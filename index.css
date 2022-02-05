@@ -1,0 +1,59 @@
+body {
+ background-color: #121213;
+ color: #d7dadc;
+}
+#title {
+font-size: 3em;
+text-align: center;
+}
+#game {
+  margin: auto;
+  max-width: 350px;
+}
+.spacer {
+  min-height: 25px;
+}
+.guesspiece {
+  font-size: 1.5em;
+  height: 60px;
+  border: 2px #3a3a3c solid ;
+  border-radius: 2px;
+  margin: 1%;
+}
+
+.piece {
+  font-size: 1.5em;
+  height: 35px;
+  background-color: #818384;
+  border-radius: 2px;
+  padding: 0%;
+  text-align: center;
+  margin: 0.5%;
+}
+.piece2 {
+  font-size: 1em;
+  width: 40px;
+  height: 35px;
+  background-color: #818384;
+  border-radius: 2px;
+  padding: 0%;
+  text-align: center;
+  margin: 0.5%;
+}
+#second {
+  margin-left: 15px;
+}
+#third {
+  margin-left: 2.5px;
+}
+.piece:hover , .piece2:hover {
+  border: 3px solid yellow;
+}
+a {
+text-decoration: none;
+color: #818384;
+}
+a:hover {
+text-decoration: none;
+color: #004FFF;
+}
