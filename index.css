@@ -32,7 +32,7 @@ text-align: center;
   border-radius: 2px;
   padding: 0%;
   text-align: center;
-  margin: 0.5%;
+  margin: 0.75%;
 }
 .piece2 {
   font-size: 1em;
@@ -42,13 +42,16 @@ text-align: center;
   border-radius: 2px;
   padding: 0%;
   text-align: center;
-  margin: 0.5%;
+  margin: 0.75%;
+}
+#first {
+  margin-left: 5px;
 }
 #second {
-  margin-left: 15px;
+  margin-left: 20px;
 }
 #third {
-  margin-left: 2.5px;
+  margin-left: 5px;
 }
 .piece:hover , .piece2:hover {
   border: 3px solid yellow;

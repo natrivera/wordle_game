@@ -13,6 +13,7 @@ var darkyellow = '#b59f3b';
 var green = '#6aaa64';
 var darkgreen = '#538d4e';
 var gray = '#86888a';
+var darkgray = '#3a3a3c';
 var black = '#212121';
 var share = false;
 
@@ -160,7 +161,7 @@ function colortiles(b1,b2,b3,b4,b5,b) {
           tempcolor = green;
         }
       } else {
-        tempcolor = gray;
+        tempcolor = darkgray;
       }
       colors.push(tempcolor);
       position++;
@@ -170,5 +171,11 @@ function colortiles(b1,b2,b3,b4,b5,b) {
     $('#' + guess + 3).css("background-color" , colors[2]);
     $('#' + guess + 4).css("background-color" , colors[3]);
     $('#' + guess + 5).css("background-color" , colors[4]);
+
+    $('#' + b1).css("background-color" , colors[0]);
+    $('#' + b2).css("background-color" , colors[1]);
+    $('#' + b3).css("background-color" , colors[2]);
+    $('#' + b4).css("background-color" , colors[3]);
+    $('#' + b5).css("background-color" , colors[4]);
   }
 }
