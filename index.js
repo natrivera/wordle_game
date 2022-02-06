@@ -14,6 +14,7 @@ var green = '#6aaa64';
 var darkgreen = '#538d4e';
 var gray = '#86888a';
 var black = '#212121';
+var share = false;
 
 
 
@@ -89,6 +90,7 @@ function enterguess() {
       //
       if (guessword == actualword) {//winner -- guess is correct
         colortiles('');
+        $('#share').html('Share');
         won = 'Y';
       } else {// guess was incorrect
 
@@ -100,6 +102,11 @@ function enterguess() {
           console.log('out of guesses');
         }
       }
+    } else {//word not in word list
+      $('#share').html('Word not in list!!!');
+      setTimeout(function() {
+        $('#share').html('');
+    }, 2000);
     }
 
   } else {
@@ -108,9 +115,30 @@ function enterguess() {
 }// end of enterguess
 
 //function to check if the guess in a valid word
-function checkwordinlist() {
-  return true;
+function checkwordinlist(g) {
+  tempnum = 0;
+  dailywords.forEach((item, i) => {
+    if(g == item.word.toUpperCase()) {
+      //actualword = item.word.toUpperCase();
+      //return true;
+      tempnum++;
+    }
+  });
+
+  return tempnum>0;
 }
+
+//function that removes text from blocks for sharing
+$("#share").click(function() {
+  if (won != '' & !share) {
+    $('.guesspiece').css('font-size' , '0em');
+    share = true;
+  } else {
+    $('.guesspiece').css('font-size' , '2em');
+    share = false;
+  }
+}); //end of remove text
+
 
 //function to color tiles of a guess
 function colortiles(b1,b2,b3,b4,b5,b) {
