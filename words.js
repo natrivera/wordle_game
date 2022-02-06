@@ -1,4 +1,4 @@
-var words = '[
+var dailywords = [
   {
     "date": "1/1/22",
     "word": "about"
@@ -5475,4 +5475,4 @@ var words = '[
     "date": "9/30/25",
     "word": "arbor"
   }
-]';
+];

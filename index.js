@@ -20,16 +20,20 @@ var black = '#212121';
 function getWord() {
    // get today's date
    var today = new Date();
-   $.getJSON(wordapi, function(word) {
-     //var num = word.words.length;
-     //var random = Math.floor(Math.random() * num);
-     //worder = word.words[random].toUpperCase();
-     words = word;
-     console.log(words);
-   }); //end of getJSON
 
-   //console.log(words);
+   dailywords.forEach((item, i) => {
+     if(checktoday(item.date)) {
+       actualword = item.word.toUpperCase();
+     }
+   });
+}
 
+function checktoday(someDate) {
+  var today = new Date();
+  var someDate = new Date(someDate);
+  return someDate.getDate() == today.getDate() &&
+    someDate.getMonth() == today.getMonth() &&
+    someDate.getFullYear() == today.getFullYear();
 }
 
 
@@ -39,41 +43,6 @@ $("document").ready(function() {
 
 
 function clear_unused() {
-  count = 0;
-  wrong = [];
-  array = [];
-  arr2 = [];
-  $("#guess").val("");
-  $("#word").html("");
-  $("#A").css("background-color", "#004fff");
-  $("#B").css("background-color", "#004fff");
-  $("#C").css("background-color", "#004fff");
-  $("#D").css("background-color", "#004fff");
-  $("#E").css("background-color", "#004fff");
-  $("#F").css("background-color", "#004fff");
-  $("#G").css("background-color", "#004fff");
-  $("#H").css("background-color", "#004fff");
-  $("#I").css("background-color", "#004fff");
-  $("#J").css("background-color", "#004fff");
-  $("#K").css("background-color", "#004fff");
-  $("#L").css("background-color", "#004fff");
-  $("#M").css("background-color", "#004fff");
-  $("#N").css("background-color", "#004fff");
-  $("#O").css("background-color", "#004fff");
-  $("#P").css("background-color", "#004fff");
-  $("#Q").css("background-color", "#004fff");
-  $("#R").css("background-color", "#004fff");
-  $("#S").css("background-color", "#004fff");
-  $("#T").css("background-color", "#004fff");
-  $("#U").css("background-color", "#004fff");
-  $("#V").css("background-color", "#004fff");
-  $("#W").css("background-color", "#004fff");
-  $("#X").css("background-color", "#004fff");
-  $("#Y").css("background-color", "#004fff");
-  $("#Z").css("background-color", "#004fff");
-  $("#filler").css("background-color" , "transparent");
-  $("#pics").html("<img class='img-responsive' src='/hangman/img/00.png'></img>");
-  $("#play").html("New Word");
 }
 
 $(".piece").click(function() {
@@ -174,5 +143,4 @@ function colortiles(b1,b2,b3,b4,b5,b) {
     $('#' + guess + 4).css("background-color" , colors[3]);
     $('#' + guess + 5).css("background-color" , colors[4]);
   }
-  //console.log(colors);
 }
