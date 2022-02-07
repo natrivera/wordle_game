@@ -145,11 +145,15 @@ $("#share").click(function() {
 function colortiles(b1,b2,b3,b4,b5,b) {
   var colors = [];
   if (b1=='') {//winner all green
+    //color all the blocks green
     $('#' + guess + 1).css("background-color" , darkgreen);
     $('#' + guess + 2).css("background-color" , darkgreen);
     $('#' + guess + 3).css("background-color" , darkgreen);
     $('#' + guess + 4).css("background-color" , darkgreen);
     $('#' + guess + 5).css("background-color" , darkgreen);
+
+    //remove the color from the keyboard
+    $('.piece').css("background-color" , '#818384');
   } else {// guess was wrong color the tiles appropriately
     var position = 1;
     var actuals =  actualword.split('');
