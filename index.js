@@ -16,6 +16,17 @@ var gray = '#86888a';
 var darkgray = '#3a3a3c';
 var black = '#212121';
 var share = false;
+var words_link = 'https://raw.githubusercontent.com/dwyl/english-words/master/words.txt';
+var five_words;
+
+fetch(words_link)
+  .then(function(response) {
+    response.text().then(function(text) {
+      const all_words = text.split("\n");
+      five_words = all_words.filter((element) => {return element.length == 5;});
+      //console.log(five_words);
+    });
+  });
 
 
 
@@ -117,9 +128,10 @@ function enterguess() {
 
 //function to check if the guess in a valid word
 function checkwordinlist(g) {
+  //console.log(all_words);
   tempnum = 0;
-  dailywords.forEach((item, i) => {
-    if(g == item.word.toUpperCase()) {
+  five_words.forEach((item, i) => {
+    if(g == item.toUpperCase()) {
       //actualword = item.word.toUpperCase();
       //return true;
       tempnum++;
@@ -182,4 +194,23 @@ function colortiles(b1,b2,b3,b4,b5,b) {
     $('#' + b4).css("background-color" , colors[3]);
     $('#' + b5).css("background-color" , colors[4]);
   }
+}
+
+
+
+function readTextFile(file){
+    // read text from URL location
+    var request = new XMLHttpRequest();
+    request.open('GET', file, true);
+    
+    request.onreadystatechange = function () {
+        if (request.readyState === 4 && request.status === 200) {
+            var type = request.getResponseHeader('Content-Type');
+            if (type.indexOf("text") !== 1) {
+                return request.responseText;
+            }
+        }
+    }
+    
+    request.send(null);
 }
