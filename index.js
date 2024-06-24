@@ -11,6 +11,7 @@ var actualword = 'BROWN';
 var yellow = '#c9b458';
 var darkyellow = '#b59f3b';
 var green = '#6aaa64';
+var uclablue = '#4F759B';
 var darkgreen = '#538d4e';
 var gray = '#86888a';
 var darkgray = '#3a3a3c';
@@ -172,7 +173,7 @@ function colortiles(b1,b2,b3,b4,b5,b) {
     [b1,b2,b3,b4,b5].forEach((x, i) => {
       var tempcolor;
       if (actuals.includes(x, 0)) {
-        tempcolor = darkyellow;
+        tempcolor = uclablue;
         if(actuals[i] == x) {
           tempcolor = green;
         }
@@ -202,7 +203,7 @@ function readTextFile(file){
     // read text from URL location
     var request = new XMLHttpRequest();
     request.open('GET', file, true);
-    
+
     request.onreadystatechange = function () {
         if (request.readyState === 4 && request.status === 200) {
             var type = request.getResponseHeader('Content-Type');
@@ -211,6 +212,6 @@ function readTextFile(file){
             }
         }
     }
-    
+
     request.send(null);
 }
