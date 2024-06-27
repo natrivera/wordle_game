@@ -23,10 +23,11 @@ text-align: center;
 .guesspiece {
   text-align: center;
   font-size: 2.5em;
-  height: 60px;
+  height: 58px;
   border: 2px #3a3a3c solid ;
   border-radius: 2px;
   margin: 1%;
+  font-weight: bold;
 }
 .spacer {
   min-height: 5px;
