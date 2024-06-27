@@ -23,7 +23,7 @@ font-weight: bold;
 }
 .guesspiece {
   text-align: center;
-  font-size: 2.5em;
+  font-size: 2.75em;
   height: 58px;
   border: 2px #3a3a3c solid ;
   border-radius: 2px;
@@ -37,7 +37,7 @@ font-weight: bold;
 .piece {
   font-size: 1.5em;
   height: 60px;
-  width: 30px;
+  width: 32px;
   background-color: #818384;
   border-radius: 2px;
   padding: 2% 0%;
