@@ -42,16 +42,18 @@ text-align: center;
   padding: 2% 0%;
   text-align: center;
   margin: 0.75%;
+  font-weight: bold;
 }
 .piece2 {
   font-size: 1.25em;
-  width: 45px;
+  width: 48px;
   height: 60px;
   background-color: #818384;
   border-radius: 2px;
   padding: 3% 0%;
   text-align: center;
   margin: 0.75%;
+  font-weight: bold;
 }
 #first {
   margin-left: -20px;
